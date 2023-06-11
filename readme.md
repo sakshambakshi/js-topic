@@ -1,8 +1,8 @@
-## Advance Topic
+## Advance Topics
 
-[Click Here](https://developer.mozilla.org/en-US/docs/Web/API/AbortController/signal) 
 
 ### AbortController
+[Docs](https://developer.mozilla.org/en-US/docs/Web/API/AbortController/signal) 
 
 The AbortController is a really helpful if you want to cancel WEB API network call and its really helpful to manage un-nessary calling going out and manage wrong cb running and unnesscary load on the server  .
 
@@ -55,7 +55,14 @@ function fetchVideo(){
 
 ```
 
+### MutationObserver
 
+
+### Service Worker
+[Resources](https://www.youtube.com/@SteveGriffith-Prof3ssorSt3v3)
+
+
+### IndexDB
 
 
 ---
