@@ -4,8 +4,12 @@
 ### AbortController
 [Docs](https://developer.mozilla.org/en-US/docs/Web/API/AbortController/signal) 
 
-The AbortController is a really helpful if you want to cancel WEB API network call and its really helpful to manage un-nessary calling going out and manage wrong cb running and unnesscary load on the server  .
+The AbortController is a really helpful if you want to cancel WEB API network call and anything async (like **event handler** and **websocket**) and its really helpful to manage un-nessary calling going out and manage wrong cb running and unnesscary load on the server  .
 
+
+AbortController Comes it with its event as well 
+
+We can event listen on signal that whether the particaly **Controller** is aborted or not so for example when some contoller is aborted you wnat to some request to a server or log or perform anyother action this is the place and we can also use this to abort anything that does take signal example websocket
 
 ---
 #### Network Call AbortController
@@ -84,6 +88,31 @@ removeBtn.addEventListner('click' , ()=>{
 })
 
 ```
+
+
+---
+#### Custome Use Case
+
+Lets just consider you want to abort a websocket which doest not take signal as a parameter.
+
+
+```js  
+const controller = new AbortController();
+const {signal} = controller 
+
+function initWebSocket(){
+    const soket = new Websocket();
+
+    if(signal.aborted){
+        socket.close();// incase if controller befir the connection is made
+    }
+
+    signal.addEventListner('abort' , () => socket.close( ) , {once: tue } /*once is passed to tell it should only be run one time only*/) // you can use to aort event to make your custom abort for async process like file action , stream , etc 
+}
+
+
+```
+It can be use for exiting heavy process 
 ---
 ### generator in js
 
