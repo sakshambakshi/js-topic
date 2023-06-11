@@ -57,6 +57,14 @@ function fetchVideo(){
 
 ### generator in js
 
+- The yield is used to pause the function and is used to give out the value
+- the yield also take the value and start it again from where it had left (We can pass in the value to another yield expression .)
+- *yield its used to pause and delegate it to anyother gernator function outside its generator function .
+
+
+
+After the invocation of that function you get the **iterable object** with a **done** property and a **value** . 
+The value will be false and to resume **next method** we can continue to this until **done** is **false**
 
 ### MutationObserver
 
