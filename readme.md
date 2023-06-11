@@ -7,6 +7,8 @@
 The AbortController is a really helpful if you want to cancel WEB API network call and its really helpful to manage un-nessary calling going out and manage wrong cb running and unnesscary load on the server  .
 
 
+---
+#### Network Call AbortController
 I have used this in reall time sports betting application as user can select any sport page and if the user changes very fast befor previous one is even loaded this can create a  unnessary work to be done both backend and frontend and it will show the previous sport and the next support according how their network are being completed and how ther callbacks are being executed but if user have changed or selected a new sport and aprevious one is not loaded just cancelled it .
 
 Understand this with the **Netflix** example if you select stranger game and you say fuck off lets watch something old school like **friends** and meantime it the stranger game is still being fetched and a spinner on the page and the user clicks on the back button and click your new old school show it will now be loading  both the starger game and friends . But with the help of our hero abortcontroller you can cancel stranger games and only load the friend saving both server resouces and  the client resources.
@@ -49,12 +51,40 @@ function fetchVideo(){
 
 }
 
+```
+---
+#### Event Handler Abort Controller
+Turns you can use abortcontroller to stop / abort event as well. It can be used to remove events , example you have many hundres all event register and you want to remove it togther you can passing the signal property and cancel/remove all the event handler
 
 
+```js
 
+const controller = new AbortController();
+const signal = controller.signal ;
+
+
+const button1 = document.getElementById('btn1')
+const button2 = document.getElementById('btn2')
+const button3 = document.getElementById('btn3')
+
+button1.addEventListner('click' , function (){
+    console.log("Just console on click")
+} , {signal})
+button2.addEventListner('click' , function (){
+    console.log("Just console on click")
+} , {signal})
+button3.addEventListner('click' , function (){
+    console.log("Just console on click")
+} , {signal})
+
+
+const removeBtn = document.getElementById('removeBtn')
+removeBtn.addEventListner('click' , ()=>{
+    controller.abort() // aall event wil be removed
+})
 
 ```
-
+---
 ### generator in js
 
 - The yield is used to pause the function and is used to give out the value
