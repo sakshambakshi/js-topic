@@ -136,3 +136,13 @@ The value will be false and to resume **next method** we can continue to this un
 
 
 ---
+
+
+### Basic OOPS 
+
+CLASS VS INTERFRENCE
+
+### Design Patterns
+
+#### SOLID princple
+
