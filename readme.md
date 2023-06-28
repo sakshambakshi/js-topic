@@ -1,3 +1,113 @@
+
+## Objects
+
+
+### getters
+Like in vue js we had **computation** property in this we have getters in case while getting avalue or a peroperty of an object we need to computate something we use the **getters** for it ;
+
+```js
+    <!-- totalMoney: 10000000, -->
+const abhishek = {
+
+    get balance(){
+        return  "Mind Your Own Business"
+    }
+    
+}
+
+const rect = {
+    length : 100 ,
+    breadth : 100 ,
+    get area(){
+        return this.length * this.breadth 
+    } 
+}
+console.log(rect.area) // 10000 (will run the function but you can use it as a property)
+```
+
+### setters
+
+
+### (getters and setters ) vs Proxy
+
+### enumerable 
+
+The enumerables in js means those properties on js Object that can be viewed and that be looped like via **for of** loop or what you are returned via **Object.keys**
+
+
+### Important Methods
+
+### assign 
+
+-It only works on the enumerable property or those property that can be assigned or Reset
+
+### create
+
+### assign vs Create 
+
+### entries
+
+
+### freeze
+
+
+### is
+
+
+### isExtensible
+
+
+### isFrozen
+
+
+### isPrototypeof 
+
+
+### isSealed
+
+
+### isSealed vs isFrozen
+
+
+### keys
+
+
+### keys vs entries
+
+
+### preventExtension
+
+
+### seal
+
+
+### setPrototypeOf
+
+
+### Value
+
+
+### defineProperty
+
+
+### What are property Descriptors??
+
+
+
+
+
+
+
+## JS DS ALGO ISSUES
+
+- sliding window
+- two pointer technique
+- SORTING
+- LINCKED list
+
+
+
+
 ## Advance Topics
 
 
