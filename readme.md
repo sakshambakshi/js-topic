@@ -26,7 +26,22 @@ console.log(rect.area) // 10000 (will run the function but you can use it as a p
 ```
 
 ### setters
+The setters property are **not enumerable** so you wont get the via Objec keys .
+**The Getter And Setter can be removed via delete keyword**
 
+
+```js
+const user = {
+     firstName: '',
+     lastName:'',
+     set fullName(name){
+         [this.firstName , this.lastName] = name.split(' ')
+     }
+ } 
+ user.fullName = 'Saksham Bakshi';
+ //user.firstName = Saksham
+ //user.lastName = Bakshi it will be set via that funcation
+```
 
 ### (getters and setters ) vs Proxy
 
