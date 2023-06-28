@@ -1,7 +1,7 @@
 
 ## Objects
 
-
+### structuredClone
 ### getters
 Like in vue js we had **computation** property in this we have getters in case while getting avalue or a peroperty of an object we need to computate something we use the **getters** for it ;
 
