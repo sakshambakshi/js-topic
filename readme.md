@@ -271,3 +271,39 @@ CLASS VS INTERFRENCE
 
 #### SOLID princple
 
+
+
+
+---
+
+const lodash = require('lodash')
+
+
+// const {cloneDeep} = lodash
+
+var child = {
+	a: 1
+}
+var obj = {
+	x: 23,
+	child,
+  	log: console.log
+};
+// with lodash
+function cloneDeep(obj ){
+    // const newObj = Object.assign({} , obj);
+    for()a
+
+}
+const clonnedObj = cloneDeep(obj)
+
+// without lodash
+// const clonnedObj = Object.assign({} , obj)
+
+
+// const clonnedObj = Object.assign({} , obj)
+console.log({clonnedObj , child , obj })
+child.a = 10
+console.log("After Changing Child")
+
+console.log({ clonnedObj ,child , obj})
