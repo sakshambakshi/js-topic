@@ -54,8 +54,10 @@ The enumerables in js means those properties on js Object that can be viewed and
 
 ### assign 
 
--It only works on the enumerable property or those property that can be assigned or Reset
+-It only works on the enumerable property or those property that can be assigned or Reset. Basically all the property that are not inherited and existed to an object .
 
+
+### hasOwn Property
 ### create
 
 ### assign vs Create 
