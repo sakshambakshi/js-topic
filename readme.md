@@ -118,7 +118,39 @@ do {
 -It only works on the enumerable property or those property that can be assigned or Reset. Basically all the property that are not inherited and existed to an object .
 
 #### setPrototypeOf()
-The setPrototypeOf takes **childObject** **parentObj** or prototype object 
+
+The setPrototypeOf takes **childObject** **parentObj** or prototype  take it as parameter and then mutatate the childObj directly by setting up its prototype to a parentObj **and mutatate directly** and the prototype is marked as refrence so if the protype method or property is set the original parent obj also change
+
+```js
+const parentObj = {
+    methods(){
+        console.log(this.name)
+    }
+}
+const childObj = {
+    name:"Child"
+}
+
+const InheritObj = Object.create(childObj , parentObj)
+undefined
+InheritObj
+{methods: undefined}
+inc = Object.setPrototypeOf(childObj , parentObj)
+{name: 'Child'}
+inc.__proto__
+{methods: ƒ}methods: ƒ methods()[[Prototype]]: Object
+inc.methods = null
+null
+parentObj
+{methods: ƒ}methods: ƒ methods()length: 0name: "methods"arguments: (...)caller: (...)[[FunctionLocation]]: VM90:2[[Prototype]]: ƒ ()[[Scopes]]: Scopes[2][[Prototype]]: Object
+inc.__proto__.methods
+ƒ methods(){
+        console.log(this.name)
+    }
+inc.__proto__.methods = null
+null
+inc.__proto__.methods 
+```
 
 ### assign vs Create 
 
