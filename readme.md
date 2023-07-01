@@ -49,8 +49,69 @@ const user = {
 
 The enumerables in js means those properties on js Object that can be viewed and that be looped like via **for of** loop or what you are returned via **Object.keys**
 
+### Protype Changing
+
+
+### Shadow properties
+
+### The ways tp set Portotype
+There are 2 kinds of way to do this: 
+- Object.create
+- Object.assign
+
+#### Object Create
+The Object.create can be used to create a protype propert on an Object
+```js
+const parentObj = {
+    methods(){
+        console.log(this.name)
+    }
+}
+
+
+const childObj = Object.create(parentObj)
+childObj.name = "This Will Console when you invoke methods on ChildObj"
+```
+
+```js
+function Shape(){
+    this.x = 0 
+    this.y   = 0 
+
+    function move(x , y ){
+        [this.x , this.y]=[x , y]
+    }
+}
+function Rect() {
+    Shape.call(this)
+}
+Rect.prototype = Object.create(Shape.prototype ,{
+    contructor:{
+        value: Rect,
+        writable: true 
+    }
+})
+```
 
 ### Important Methods
+
+### hasOwn()
+It returns the **boolean value** whether the given object and **propertyName** string (key) and telling whether its inherited or its own property
+
+### getPrototypeOf()
+The getPrototypeOf is a method in which will the parent or immediate prototype of the given object. You can find all the parent 
+
+```js
+obj = Date
+do {
+    console.log("Start" ,obj)
+    obj = Object.getPrototypeOf(obj);
+    
+    console.log("Finish" ,obj)
+}while(obj)
+
+//Object protype is null so it will end
+```
 
 ### assign 
 
