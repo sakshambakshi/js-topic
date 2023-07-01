@@ -95,10 +95,10 @@ Rect.prototype = Object.create(Shape.prototype ,{
 
 ### Important Methods
 
-### hasOwn()
+#### hasOwn()
 It returns the **boolean value** whether the given object and **propertyName** string (key) and telling whether its inherited or its own property
 
-### getPrototypeOf()
+#### getPrototypeOf()
 The getPrototypeOf is a method in which will the parent or immediate prototype of the given object. You can find all the parent 
 
 ```js
@@ -113,20 +113,19 @@ do {
 //Object protype is null so it will end
 ```
 
-### assign 
+#### assign 
 
 -It only works on the enumerable property or those property that can be assigned or Reset. Basically all the property that are not inherited and existed to an object .
 
-
-### hasOwn Property
-### create
+#### setPrototypeOf()
+The setPrototypeOf takes **childObject** **parentObj** or prototype object 
 
 ### assign vs Create 
 
-### entries
+#### entries
 
 
-### freeze
+#### freeze
 
 
 ### is
