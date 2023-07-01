@@ -118,7 +118,7 @@ do {
 -It only works on the enumerable property or those property that can be assigned or Reset. Basically all the property that are not inherited and existed to an object .
 
 #### setPrototypeOf()
-[SetProtype of](./setPrototype.png)
+![SetProtype of](setPrototype.png "SetProtype of")
 The setPrototypeOf takes **childObject** **parentObj** or prototype  take it as parameter and then mutatate the childObj directly by setting up its prototype to a parentObj **and mutatate directly** and the prototype is marked as refrence so if the protype method or property is set the original parent obj also change
 
 ```js
