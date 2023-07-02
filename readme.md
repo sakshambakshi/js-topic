@@ -164,8 +164,8 @@ The entries static method returns the enumerable properties **keys and value sub
 
 
 ### is
-It is used to compare two value wether two value is same
-[Link]("Link" https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/is) 
+It is used to compare two value wether two value is same mind it cqan help you to detect wether the object is of same refernce not having same value 
+![Link]("Link" https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/is) 
 
 ### isExtensible
 
@@ -183,10 +183,10 @@ It is used to compare two value wether two value is same
 
 
 ### keys
-
+The Object.keys() helps us to get array of keys String of an object passed in arguments
 
 ### keys vs entries
-
+The **keys vs entries** method takes same type and value of argument and key return just array of key (string) and in the case of entries you can get sub-array of key and value
 
 ### preventExtension
 
