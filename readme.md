@@ -1,4 +1,3 @@
-
 - [Objects](#objects)
   - [structuredClone](#structuredclone)
   - [getters](#getters)
@@ -15,7 +14,6 @@
     - [getPrototypeOf()](#getprototypeof)
     - [setPrototypeOf()](#setprototypeof)
   - [assign vs Create](#assign-vs-create)
-    - [freeze](#freeze)
     - [is](#is)
     - [isExtensible](#isextensible)
     - [isFrozen](#isfrozen)
@@ -27,10 +25,10 @@
     - [value](#value)
     - [keys vs entries](#keys-vs-entries)
     - [preventExtension](#preventextension)
+    - [freeze](#freeze)
     - [seal](#seal)
     - [seal vs freeze vs preventExtension](#seal-vs-freeze-vs-preventextension)
-  - [setPrototypeOf](#setprototypeof-1)
-  - [defineProperty](#defineproperty)
+    - [defineProperty](#defineproperty)
   - [What are property Descriptors??](#what-are-property-descriptors)
 - [JS DS ALGO ISSUES](#js-ds-algo-issues)
 - [Advance Topics](#advance-topics)
@@ -46,7 +44,6 @@
   - [Basic OOPS](#basic-oops)
   - [Design Patterns](#design-patterns)
     - [SOLID princple](#solid-princple)
-
 
 ## Objects
 
@@ -205,8 +202,6 @@ inc.__proto__.methods
 The assign is to assign the property to new object and were as in the create a protype on object
 
 
-#### freeze
-
 
 #### is
 It is used to compare two value wether two value is same mind it cqan help you to detect wether the object is of same refernce not having same value 
@@ -219,7 +214,20 @@ It is used to compare two value wether two value is same mind it cqan help you t
 
 
 #### isPrototypeof 
+Its **not a static method but a prototype** it helps us to check the protype of the object like for Example
 
+```js
+function Foo(){}
+function Boo(){}
+
+Boo.prototype = Object.create(Foo.prototype)
+
+const bar  = new Boo();
+
+console.log(Foo.prototype.isPrototypeOf(bar))
+console.log(Boo.prototype.isPrototypeOf(bar))
+
+```
 
 #### isSealed
 
@@ -246,25 +254,37 @@ The Object.value() returns the values array of the object
 The **keys vs entries** method takes same type and value of argument and key return just array of key (string) and in the case of entries you can get sub-array of key and value
 
 #### preventExtension
-The preventExtension method takes object as an argument and makes unextensionable i.e you will not be able to add  
+The preventExtension method takes object as an argument and makes unextensionable i.e you will not be able to add  new property
 
+#### freeze
+The freeze niether let you add new property or update , delete protery or change the property descruptor and it works different with strict  mode
+
+```js
+Object.freeze(obj)
+Object.defineProperty(obj, "ohai", { value: 17 });
+Object.defineProperty(obj, "foo", { value: "eit" });
+
+// It's also impossible to change the prototype
+// both statements below will throw a TypeError.
+Object.setPrototypeOf(obj, { x: 20 });
+obj.__proto__ = { x: 20 };
+
+```
 
 #### seal
-
+It just lets you modify existing value 
 
 #### seal vs freeze vs preventExtension
 ![Difference](difference_seal_vs_freeze_vs_prototype.png "Difference")
 
-### setPrototypeOf
 
 
-
-
-### defineProperty
-
+#### defineProperty
+Helps to define propert with descriptors
+**enumerable; configurable; writable; value**
 
 ### What are property Descriptors??
-
+The propert descriptors are the property typeof object like is it a **getter , setter ;  enumerable ; configurable ; writable ; value**
 
 
 
