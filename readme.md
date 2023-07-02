@@ -98,6 +98,11 @@ Rect.prototype = Object.create(Shape.prototype ,{
 #### hasOwn()
 It returns the **boolean value** whether the given object and **propertyName** string (key) and telling whether its inherited or its own property
 
+
+#### assign 
+
+-It only works on the enumerable property or those property that can be assigned or Reset. Basically all the property that are not inherited and existed to an object .
+
 #### getPrototypeOf()
 The getPrototypeOf is a method in which will the parent or immediate prototype of the given object. You can find all the parent 
 
@@ -112,11 +117,6 @@ do {
 
 //Object protype is null so it will end
 ```
-
-#### assign 
-
--It only works on the enumerable property or those property that can be assigned or Reset. Basically all the property that are not inherited and existed to an object .
-
 #### setPrototypeOf()
 ![SetProtype of](setPrototype.png "SetProtype of")
 The setPrototypeOf takes **childObject** **parentObj** or prototype  take it as parameter and then mutatate the childObj directly by setting up its prototype to a parentObj **and mutatate directly** and the prototype is marked as refrence so if the protype method or property is set the original parent obj also change
@@ -153,9 +153,12 @@ inc.__proto__.methods
 ```
 
 ### assign vs Create 
-
+The assign is to assign the property to new object and were as in the create a protype on object
 #### entries
-
+The entries static method returns the enumerable properties **keys and value subArray**
+```js
+[[key , value]]
+````
 
 #### freeze
 
