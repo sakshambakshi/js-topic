@@ -164,7 +164,8 @@ The entries static method returns the enumerable properties **keys and value sub
 
 
 ### is
-
+It is used to compare two value wether two value is same
+[Link]("Link" https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/is) 
 
 ### isExtensible
 
