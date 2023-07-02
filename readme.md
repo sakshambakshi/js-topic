@@ -154,50 +154,61 @@ inc.__proto__.methods
 
 ### assign vs Create 
 The assign is to assign the property to new object and were as in the create a protype on object
-#### entries
-The entries static method returns the enumerable properties **keys and value subArray**
-```js
-[[key , value]]
-````
+
 
 #### freeze
 
 
-### is
+#### is
 It is used to compare two value wether two value is same mind it cqan help you to detect wether the object is of same refernce not having same value 
 ![Link]("Link" https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/is) 
 
-### isExtensible
+#### isExtensible
 
 
-### isFrozen
+#### isFrozen
 
 
-### isPrototypeof 
+#### isPrototypeof 
 
 
-### isSealed
+#### isSealed
 
 
-### isSealed vs isFrozen
+#### isSealed vs isFrozen
 
 
-### keys
+#### keys
 The Object.keys() helps us to get array of keys String of an object passed in arguments
 
-### keys vs entries
+#### entries
+The entries static method returns the enumerable properties **keys and value subArray**
+
+```js
+Object.entries({key:'value'})
+[
+    [key , value ]
+]
+```
+#### value
+The Object.value() returns the values array of the object
+
+#### keys vs entries
 The **keys vs entries** method takes same type and value of argument and key return just array of key (string) and in the case of entries you can get sub-array of key and value
 
-### preventExtension
+#### preventExtension
+The preventExtension method takes object as an argument and makes unextensionable i.e you will not be able to add  
 
 
-### seal
+#### seal
 
+
+#### seal vs freeze vs preventExtension
+![Difference](difference_seal_vs_freeze_vs_prototype.png "Difference")
 
 ### setPrototypeOf
 
 
-### Value
 
 
 ### defineProperty
@@ -369,39 +380,3 @@ CLASS VS INTERFRENCE
 
 #### SOLID princple
 
-
-
-
----
-
-const lodash = require('lodash')
-
-
-// const {cloneDeep} = lodash
-
-var child = {
-	a: 1
-}
-var obj = {
-	x: 23,
-	child,
-  	log: console.log
-};
-// with lodash
-function cloneDeep(obj ){
-    // const newObj = Object.assign({} , obj);
-    for()a
-
-}
-const clonnedObj = cloneDeep(obj)
-
-// without lodash
-// const clonnedObj = Object.assign({} , obj)
-
-
-// const clonnedObj = Object.assign({} , obj)
-console.log({clonnedObj , child , obj })
-child.a = 10
-console.log("After Changing Child")
-
-console.log({ clonnedObj ,child , obj})
