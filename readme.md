@@ -31,7 +31,16 @@
     - [defineProperty](#defineproperty)
   - [What are property Descriptors??](#what-are-property-descriptors)
 - [JS DS ALGO ISSUES](#js-ds-algo-issues)
+- [Function](#function)
+  - [Currying](#currying)
+  - [Closures](#closures)
+- [Aync](#aync)
+  - [Promises](#promises)
+  - [async/await](#asyncawait)
+  - [Promises vs async/await](#promises-vs-asyncawait)
+- [Timers](#timers)
 - [Advance Topics](#advance-topics)
+  - [Memorization](#memorization)
   - [AbortController](#abortcontroller)
     - [Network Call AbortController](#network-call-abortcontroller)
     - [Event Handler Abort Controller](#event-handler-abort-controller)
@@ -44,6 +53,7 @@
   - [Basic OOPS](#basic-oops)
   - [Design Patterns](#design-patterns)
     - [SOLID princple](#solid-princple)
+  - [Memorization](#memorization-1)
 
 
 
@@ -301,10 +311,20 @@ The propert descriptors are the property typeof object like is it a **getter , s
 - LINCKED list
 
 
+## Function
+### Currying
+### Closures
+
+## Aync 
+### Promises
+### async/await
+### Promises vs async/await
+
+## Timers
 
 
 ## Advance Topics
-
+### Memorization
 
 ### AbortController
 [Docs](https://developer.mozilla.org/en-US/docs/Web/API/AbortController/signal) 
@@ -451,3 +471,4 @@ CLASS VS INTERFRENCE
 
 #### SOLID princple
 
+### Memorization 
