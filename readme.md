@@ -45,6 +45,8 @@
   - [Design Patterns](#design-patterns)
     - [SOLID princple](#solid-princple)
 
+
+
 ## Objects
 
 ### structuredClone
