@@ -326,6 +326,13 @@ The propert descriptors are the property typeof object like is it a **getter , s
 ## Advance Topics
 ### Memorization
 
+### Debouncing and throttling
+#### Debouncing
+![Debouncing Animation](./images/debounce.gif)
+**Rate Limiting**
+#### Throttling
+**Rate Limiting**
+
 ### AbortController
 [Docs](https://developer.mozilla.org/en-US/docs/Web/API/AbortController/signal) 
 
