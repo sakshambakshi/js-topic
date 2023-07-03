@@ -333,12 +333,36 @@ For [Overview](https://jools.dev/debounce-and-throttle-functions-in-javascript) 
 #### Debouncing
 ![Debouncing Animation](./images/debounce.gif)
 What debouncing does is that whenver a function is called which is debounced it will run it after given/specified interval of time if during that the wait duration another invoaking is done it will reset the time and start againb the time unless the last even is fired and after that given duration it will execute  
-
+```js
+function basicDebounceImplementation(fn , duration){
+    let debounceTimer = null ;
+    return function (){
+        const [context , args] = [this , arguments]
+        if(debounceTimer) clearInterval(debounceTimer); // the more you call the  later  the function will be called 
+        debounceTimer = setTimeout(() => fn.apply(context ,args) , duration))  
+    }
+}
+ ```
 **Rate Limiting**
 #### Throttling
 What throttle does is that it execute the function and waits for the given  time and even through the same function is being called or same event is running it will pause for a given duration after that if the event continous it will run it and then pause the repeated executrion for that time 
 **Rate Limiting**
+```js
+function basicThrottlingImplementation(fn , duration ){
+    const isThrottling = false 
+    return function (){
+        if(isThrottling) return null
+        const [context , args] = [this , arguments];
+        isThrottling = true;
+        setTimeout(() =>{isThrottling = false} , duration) 
+        fn.apply(context ,args )
+    }
+    
+    
+}
 
+
+```
 ### AbortController
 [Docs](https://developer.mozilla.org/en-US/docs/Web/API/AbortController/signal) 
 
