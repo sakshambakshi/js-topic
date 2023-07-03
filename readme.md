@@ -357,11 +357,8 @@ function basicThrottlingImplementation(fn , duration ){
         setTimeout(() =>{isThrottling = false} , duration) 
         fn.apply(context ,args )
     }
-    
-    
+       
 }
-
-
 ```
 ### AbortController
 [Docs](https://developer.mozilla.org/en-US/docs/Web/API/AbortController/signal) 
