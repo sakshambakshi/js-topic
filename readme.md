@@ -41,6 +41,9 @@
 - [Timers](#timers)
 - [Advance Topics](#advance-topics)
   - [Memorization](#memorization)
+  - [Debouncing and throttling](#debouncing-and-throttling)
+    - [Debouncing](#debouncing)
+    - [Throttling](#throttling)
   - [AbortController](#abortcontroller)
     - [Network Call AbortController](#network-call-abortcontroller)
     - [Event Handler Abort Controller](#event-handler-abort-controller)
@@ -50,6 +53,9 @@
   - [MutationObserver](#mutationobserver)
   - [Service Worker](#service-worker)
   - [IndexDB](#indexdb)
+- [EVENTS Concept of JS](#events-concept-of-js)
+  - [Load vs DOMContentLoaded](#load-vs-domcontentloaded)
+- [DOMContentLoaded is loaded when th](#domcontentloaded-is-loaded-when-th)
   - [Basic OOPS](#basic-oops)
   - [Design Patterns](#design-patterns)
     - [SOLID princple](#solid-princple)
@@ -297,9 +303,6 @@ Helps to define propert with descriptors
 
 ### What are property Descriptors??
 The propert descriptors are the property typeof object like is it a **getter , setter ;  enumerable ; configurable ; writable ; value**
-
-
-
 
 
 
