@@ -493,7 +493,9 @@ The value will be false and to resume **next method** we can continue to this un
 
 ### IndexDB
 
-
+## EVENTS Concept of JS
+### Load vs DOMContentLoaded
+DOMContentLoaded is loaded when th
 ---
 
 
