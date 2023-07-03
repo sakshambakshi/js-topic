@@ -327,10 +327,16 @@ The propert descriptors are the property typeof object like is it a **getter , s
 ### Memorization
 
 ### Debouncing and throttling
+For [Overview](https://jools.dev/debounce-and-throttle-functions-in-javascript) read thsi 
+![Debouncing Animation](./images/throttle-debounce.gif)
+
 #### Debouncing
 ![Debouncing Animation](./images/debounce.gif)
+What debouncing does is that whenver a function is called which is debounced it will run it after given/specified interval of time if during that the wait duration another invoaking is done it will reset the time and start againb the time unless the last even is fired and after that given duration it will execute  
+
 **Rate Limiting**
 #### Throttling
+What throttle does is that it execute the function and waits for the given  time and even through the same function is being called or same event is running it will pause for a given duration after that if the event continous it will run it and then pause the repeated executrion for that time 
 **Rate Limiting**
 
 ### AbortController
