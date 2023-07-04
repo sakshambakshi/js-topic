@@ -44,6 +44,9 @@
   - [Debouncing and throttling](#debouncing-and-throttling)
     - [Debouncing](#debouncing)
     - [Throttling](#throttling)
+- [Script Loading](#script-loading)
+  - [Defer](#defer)
+  - [Async](#async)
   - [AbortController](#abortcontroller)
     - [Network Call AbortController](#network-call-abortcontroller)
     - [Event Handler Abort Controller](#event-handler-abort-controller)
@@ -54,8 +57,13 @@
   - [Service Worker](#service-worker)
   - [IndexDB](#indexdb)
 - [EVENTS Concept of JS](#events-concept-of-js)
+  - [Bubbling vs Capturing](#bubbling-vs-capturing)
+    - [Capturing](#capturing)
+    - [Bubbling](#bubbling)
+      - [stopPropogation()](#stoppropogation)
+  - [Event Delgation](#event-delgation)
+    - [currentTarget vs target](#currenttarget-vs-target)
   - [Load vs DOMContentLoaded](#load-vs-domcontentloaded)
-- [DOMContentLoaded is loaded when th](#domcontentloaded-is-loaded-when-th)
   - [Basic OOPS](#basic-oops)
   - [Design Patterns](#design-patterns)
     - [SOLID princple](#solid-princple)
@@ -363,6 +371,9 @@ function basicThrottlingImplementation(fn , duration ){
        
 }
 ```
+## Script Loading
+### Defer
+### Async
 ### AbortController
 [Docs](https://developer.mozilla.org/en-US/docs/Web/API/AbortController/signal) 
 
@@ -497,8 +508,20 @@ The value will be false and to resume **next method** we can continue to this un
 ### IndexDB
 
 ## EVENTS Concept of JS
+
+### Bubbling vs Capturing
+#### Capturing
+Its by default false
+#### Bubbling
+##### stopPropogation()
+### Event Delgation
+Use in the case of the bubbling as image you ve the hundred of li or lots of sibling element instead puting evengt on each one of them you can add and  ommponent parent and listen the event over there via the property of the Bubbling
+#### currentTarget vs target 
+- The currentTarget provided you with the element on which the event listner is added but  in the case of the target it tells you where the event is triggered or actaul event happends. 
+
 ### Load vs DOMContentLoaded
-DOMContentLoaded is loaded when th
+DOMContentLoaded is loaded when the dom is parsed and load when all the script , styles are loaded
+
 ---
 
 
@@ -511,3 +534,21 @@ CLASS VS INTERFRENCE
 #### SOLID princple
 
 ### Memorization 
+
+
+[
+    "Debouncing & Throttling | Interview Prep | Browser Module | Web Dev In Hindi",
+    "DOMContentLoaded Vs Load Events | Interview Prep | Browser Module | Web Dev In Hindi",
+    "Defer Vs Async Vs Normal Scripts | Interview Prep | Browser Module | Web Dev In Hindi",
+    "CSS Background Properties | Interview Prep | Browser Module | Web Dev In Hindi",
+    "Cookies and CSRF Attack!! | Interview Prep | Browser Module | Web Dev In Hindi",
+    "CORS Error!! (Cross Origin Resource Sharing) | Interview Prep | Browser Module | Web Dev",
+    "CSS Selectors Specifity | Interview Prep | Browser Module | Web Dev In Hindi",
+    "HTTP Verbs (Methods, Status codes, Status type) | Interview Prep | Browser Module | Web Dev",
+    "CSS Pseudo Classes | Interview Prep | Browser Module | Web Dev In Hindi",
+    "CSS z-index Property | Interview Prep | Browser Module | Web Dev In Hindi",
+    "XMLHttpRequest Vs Fetch Vs Axios [Network Requests] | Interview Prep | Browser Module | Web Dev",
+    "IndexedDB Storage | Web Storage API | Interview Prep | Browser Module | Web Dev In Hindi",
+    "Local Storage Vs Session Storage | Web Storage API | Interview Prep | Browser Module | Web Dev",
+    "Browser Events [In-depth] | Bubbling, Capturing, Target, Current Target | Interview Prep | Web Dev"
+]
