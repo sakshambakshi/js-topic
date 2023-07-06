@@ -44,6 +44,7 @@
     - [Promises Static Methods](#promises-static-methods)
       - [allSettled](#allsettled)
       - [any](#any)
+      - [all](#all)
       - [race](#race)
       - [reject](#reject)
       - [resolve](#resolve)
@@ -354,8 +355,16 @@ It takes 2 args the first one is the cb when the the promise is successfuly reso
 #### Promises Static Methods
 ![Promises Static Method](images/promise_static.jpg "Promises Static Method")
 ##### allSettled
+If **all resolved and all rejected**
 ##### any
+If **any resolved and any rejected**
+
+##### all
+If **all done any rejected**
+
 ##### race
+If **any done all rejected**
+
 ##### reject
 ##### resolve
 
