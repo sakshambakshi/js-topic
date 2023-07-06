@@ -331,6 +331,9 @@ The propert descriptors are the property typeof object like is it a **getter , s
 ### Promises
 #### Promise constuctor Methods
 ##### then
+It takes 2 args the first one is the cb when the the promise is successfuly resolve and the other one is to used one their are some issue and for the **reject or catch phase**
+
+
 ##### catch 
 ##### finally 
 
