@@ -325,6 +325,7 @@ The propert descriptors are the property typeof object like is it a **getter , s
 ## Function
 ### Currying
 ### Closures
+#### Using closures for  private property
 ---
 ## Aync Activities  
 ### Promises
