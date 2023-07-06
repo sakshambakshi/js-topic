@@ -325,15 +325,27 @@ The propert descriptors are the property typeof object like is it a **getter , s
 ## Function
 ### Currying
 ### Closures
-
-## Aync 
+---
+## Aync Activities  
 ### Promises
+#### Promises Methods
+##### allSettled
+##### any
+##### race
+##### reject
+##### resolve
+
+
 ### async/await
 ### Promises vs async/await
-
+---
 ## Timers
 
-
+### setTimeout
+### clearInterval
+### setInterval
+### clearInterval
+---
 ## Advance Topics
 ### Memorization
 
@@ -371,9 +383,11 @@ function basicThrottlingImplementation(fn , duration ){
        
 }
 ```
+---
 ## Script Loading
 ### Defer
 ### Async
+---
 ### AbortController
 [Docs](https://developer.mozilla.org/en-US/docs/Web/API/AbortController/signal) 
 
