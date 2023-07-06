@@ -328,7 +328,12 @@ The propert descriptors are the property typeof object like is it a **getter , s
 ---
 ## Aync Activities  
 ### Promises
-#### Promises Methods
+#### Promise constuctor Methods
+##### then
+##### catch 
+##### finally 
+
+#### Promises Static Methods
 ##### allSettled
 ##### any
 ##### race
