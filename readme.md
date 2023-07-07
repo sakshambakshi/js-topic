@@ -359,6 +359,8 @@ If **all resolved and all rejected**
 ##### any
 If **any resolved and any rejected**
 
+---
+
 ##### all
 If **all done any rejected**
 
