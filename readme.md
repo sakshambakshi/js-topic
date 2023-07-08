@@ -329,12 +329,27 @@ The propert descriptors are the property typeof object like is it a **getter , s
 ---
 ## Aync Activities  
 ### Promises
-#### Promise constuctor Methods
-##### then
-It takes 2 args the first one is the cb when the the promise is successfuly resolve and the other one is to used one their are some issue and for the **reject or catch phase**
+#### States 
+- Fuffiled
+- Setlled
+- Pending
+- Rejected 
+Even if a promises is fuffiled and then also you called the **then method** it will stil be executed and they will be called after the **call stack** is cleared and then they will be executed 
 
+#### Promise constuctor Methods
+##### then()
+It takes 2 args the first one is the cb when the the promise is successfuly resolve and the other one is to used one their are some issue and for the **reject or catch phase**,
+A promise paryicaipate more than one nesting  or for multiple then 
+
+```js
+const somePromise = new Promise(someFunc)
+somePromise.then(onResolve , onReject)
+somePromise.then(onResolve , onReject)
+// both could be inviokled 
+```
 
 ##### catch 
+
 ##### finally 
 
 #### Promises Static Methods
