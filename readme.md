@@ -34,11 +34,27 @@
 - [Function](#function)
   - [Currying](#currying)
   - [Closures](#closures)
-- [Aync](#aync)
+    - [Using closures for  private property](#using-closures-for--private-property)
+- [Aync Activities](#aync-activities)
   - [Promises](#promises)
+    - [Promise constuctor Methods](#promise-constuctor-methods)
+      - [then](#then)
+      - [catch](#catch)
+      - [finally](#finally)
+    - [Promises Static Methods](#promises-static-methods)
+      - [allSettled](#allsettled)
+      - [any](#any)
+      - [all](#all)
+      - [race](#race)
+      - [reject](#reject)
+      - [resolve](#resolve)
   - [async/await](#asyncawait)
   - [Promises vs async/await](#promises-vs-asyncawait)
 - [Timers](#timers)
+  - [setTimeout](#settimeout)
+  - [clearInterval](#clearinterval)
+  - [setInterval](#setinterval)
+  - [clearInterval](#clearinterval-1)
 - [Advance Topics](#advance-topics)
   - [Memorization](#memorization)
   - [Debouncing and throttling](#debouncing-and-throttling)
@@ -68,7 +84,6 @@
   - [Design Patterns](#design-patterns)
     - [SOLID princple](#solid-princple)
   - [Memorization](#memorization-1)
-
 
 
 ## Objects
@@ -353,9 +368,20 @@ somePromise.then(onResolve , onReject)
 ##### finally 
 
 #### Promises Static Methods
+![Promises Static Method](images/promise_static.jpg "Promises Static Method")
 ##### allSettled
+If **all resolved and all rejected**
 ##### any
+If **any resolved and any rejected**
+
+---
+
+##### all
+If **all done any rejected**
+
 ##### race
+If **any done all rejected**
+
 ##### reject
 ##### resolve
 
