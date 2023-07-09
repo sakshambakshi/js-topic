@@ -8,6 +8,7 @@
     - [Call](#call)
     - [Apply](#apply)
     - [Bind](#bind)
+      - [Partial Application](#partial-application)
       - [Use Cases  of Bind Like Partial Application](#use-cases--of-bind-like-partial-application)
         - [Most useful example of Partial Application of Bind](#most-useful-example-of-partial-application-of-bind)
   - [Objects](#objects)
@@ -119,6 +120,9 @@ The globalThis is use to refer the global object of a given environment
 #### Apply
 
 #### Bind
+##### Partial Application
+The partial application is  used to prefill the arguments , or to say the partial application returns 
+
 ##### Use Cases  of Bind Like Partial Application 
 
 ```js
@@ -138,7 +142,7 @@ console.log(nestedAddWith2(1)) // 4
 ```
 
 ###### Most useful example of Partial Application of Bind
-What You just saw in the below example is that bind returns a function in which you need to pass less arguments or to **say Prefill The arguments**
+What You just saw in the below example is that bind returns a function in which you need to pass less arguments or to **say it just Prefills The arguments**
 
 ```js
 import {useState , useEffect} from "react"
