@@ -8,7 +8,8 @@
     - [Call](#call)
     - [Apply](#apply)
     - [Bind](#bind)
-      - [Use Cases  of Bind Like Currying](#use-cases--of-bind-like-currying)
+      - [Use Cases  of Bind Like Partial Application](#use-cases--of-bind-like-partial-application)
+        - [Most useful example of Partial Application of Bind](#most-useful-example-of-partial-application-of-bind)
   - [Objects](#objects)
     - [structuredClone](#structuredclone)
     - [getters](#getters)
@@ -118,7 +119,53 @@ The globalThis is use to refer the global object of a given environment
 #### Apply
 
 #### Bind
-##### Use Cases  of Bind Like Currying
+##### Use Cases  of Bind Like Partial Application 
+
+```js
+function add(a , b){
+    console.log(a+b)
+}
+
+
+const addWith2 = add.bind(this , 2); // this will return a function with first argument as 2 
+
+console.log(addWith2(1)) // 3
+console.log(addWith2(2)) // 3
+const nestedAddWith2 = addWith2.bind(this , 2);
+console.log(nestedAddWith2())// 4
+console.log(nestedAddWith2(1)) // 4
+
+```
+
+###### Most useful example of Partial Application of Bind
+What You just saw in the below example is that bind returns a function in which you need to pass less arguments or to **say Prefill The arguments**
+
+```js
+import {useState , useEffect} from "react"
+
+export default function App(){
+    const [state , setState] = useState(() =>({})) 
+    function setStateOnChange(inputName , evt){
+        return setState(($state) => (
+            {
+                ...$state,
+                [inputName]: evt.target.value
+            }
+        ))
+    }
+    return (
+        <div>
+            <form>
+                <input onChange={setStateOnChange.bind(this , "firstName")} />
+                <input onChange={setStateOnChange.bind(this , "lastName")} />
+            </form>
+            
+        </div>
+    )
+}
+
+```
+
 
 
 
