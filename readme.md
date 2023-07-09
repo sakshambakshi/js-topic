@@ -1,4 +1,14 @@
 - [JS OOPS](#js-oops)
+  - [globalThis](#globalthis)
+  - [this](#this)
+  - [this in Strict vs this in non strict mode](#this-in-strict-vs-this-in-non-strict-mode)
+  - [Inplicit binding](#inplicit-binding)
+  - [Explict Binding](#explict-binding)
+  - [Important Methods](#important-methods)
+    - [Call](#call)
+    - [Apply](#apply)
+    - [Bind](#bind)
+      - [Use Cases  of Bind Like Currying](#use-cases--of-bind-like-currying)
   - [Objects](#objects)
     - [structuredClone](#structuredclone)
     - [getters](#getters)
@@ -9,7 +19,7 @@
     - [Shadow properties](#shadow-properties)
     - [The ways tp set Portotype](#the-ways-tp-set-portotype)
         - [Object Create](#object-create)
-    - [Important Methods](#important-methods)
+    - [Important Methods](#important-methods-1)
         - [hasOwn()](#hasown)
         - [assign](#assign)
         - [getPrototypeOf()](#getprototypeof)
@@ -92,6 +102,27 @@
 
 
 ## JS OOPS
+### globalThis 
+The globalThis is use to refer the global object of a given environment
+
+### this
+### this in Strict vs this in non strict mode
+
+
+### Inplicit binding
+
+### Explict Binding
+
+### Important Methods
+#### Call
+#### Apply
+
+#### Bind
+##### Use Cases  of Bind Like Currying
+
+
+
+
 ### Objects
 
 #### structuredClone
