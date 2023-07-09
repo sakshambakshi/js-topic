@@ -1,5 +1,6 @@
 - [JS OOPS](#js-oops)
   - [globalThis](#globalthis)
+  - [new keyword](#new-keyword)
   - [this](#this)
   - [this in Strict vs this in non strict mode](#this-in-strict-vs-this-in-non-strict-mode)
   - [Inplicit binding](#inplicit-binding)
@@ -8,6 +9,7 @@
     - [Call](#call)
     - [Apply](#apply)
     - [Bind](#bind)
+      - [Bind Polyfill](#bind-polyfill)
       - [Partial Application](#partial-application)
       - [Use Cases  of Bind Like Partial Application](#use-cases--of-bind-like-partial-application)
         - [Most useful example of Partial Application of Bind](#most-useful-example-of-partial-application-of-bind)
@@ -107,6 +109,9 @@
 ### globalThis 
 The globalThis is use to refer the global object of a given environment
 
+### new keyword
+
+
 ### this
 ### this in Strict vs this in non strict mode
 
@@ -120,6 +125,22 @@ The globalThis is use to refer the global object of a given environment
 #### Apply
 
 #### Bind
+##### Bind Polyfill
+
+
+
+```js
+Function.prototype.$bind = function (ctx , ...args) {
+    const fn = this 
+    return function (...secondArgs){
+
+            return fn.apply(ctx , [...args ,...secondArgs ])
+        
+    }
+}
+```
+
+
 ##### Partial Application
 The partial application is  used to prefill the arguments , or to say the **partial application returns a function that requires less args**.
 
