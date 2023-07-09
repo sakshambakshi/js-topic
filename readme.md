@@ -115,7 +115,6 @@ The globalThis is use to refer the global object of a given environment
 ### this
 ### this in Strict vs this in non strict mode
 
-
 ### Inplicit binding
 
 ### Explict Binding
