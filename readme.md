@@ -1,35 +1,36 @@
-- [Objects](#objects)
-  - [structuredClone](#structuredclone)
-  - [getters](#getters)
-  - [setters](#setters)
-  - [(getters and setters ) vs Proxy](#getters-and-setters--vs-proxy)
-  - [enumerable](#enumerable)
-  - [Protype Changing](#protype-changing)
-  - [Shadow properties](#shadow-properties)
-  - [The ways tp set Portotype](#the-ways-tp-set-portotype)
-    - [Object Create](#object-create)
-  - [Important Methods](#important-methods)
-    - [hasOwn()](#hasown)
-    - [assign](#assign)
-    - [getPrototypeOf()](#getprototypeof)
-    - [setPrototypeOf()](#setprototypeof)
-    - [assign vs Create](#assign-vs-create)
-    - [is](#is)
-    - [isExtensible](#isextensible)
-    - [isFrozen](#isfrozen)
-    - [isPrototypeof](#isprototypeof)
-    - [isSealed](#issealed)
-    - [isSealed vs isFrozen](#issealed-vs-isfrozen)
-    - [keys](#keys)
-    - [entries](#entries)
-    - [value](#value)
-    - [keys vs entries](#keys-vs-entries)
-    - [preventExtension](#preventextension)
-    - [freeze](#freeze)
-    - [seal](#seal)
-    - [seal vs freeze vs preventExtension](#seal-vs-freeze-vs-preventextension)
-    - [defineProperty](#defineproperty)
-  - [What are property Descriptors??](#what-are-property-descriptors)
+- [JS OOPS](#js-oops)
+  - [Objects](#objects)
+    - [structuredClone](#structuredclone)
+    - [getters](#getters)
+    - [setters](#setters)
+    - [(getters and setters ) vs Proxy](#getters-and-setters--vs-proxy)
+    - [enumerable](#enumerable)
+    - [Protype Changing](#protype-changing)
+    - [Shadow properties](#shadow-properties)
+    - [The ways tp set Portotype](#the-ways-tp-set-portotype)
+        - [Object Create](#object-create)
+    - [Important Methods](#important-methods)
+        - [hasOwn()](#hasown)
+        - [assign](#assign)
+        - [getPrototypeOf()](#getprototypeof)
+        - [setPrototypeOf()](#setprototypeof)
+        - [assign vs Create](#assign-vs-create)
+        - [is](#is)
+        - [isExtensible](#isextensible)
+        - [isFrozen](#isfrozen)
+        - [isPrototypeof](#isprototypeof)
+        - [isSealed](#issealed)
+        - [isSealed vs isFrozen](#issealed-vs-isfrozen)
+        - [keys](#keys)
+        - [entries](#entries)
+        - [value](#value)
+        - [keys vs entries](#keys-vs-entries)
+        - [preventExtension](#preventextension)
+        - [freeze](#freeze)
+        - [seal](#seal)
+        - [seal vs freeze vs preventExtension](#seal-vs-freeze-vs-preventextension)
+        - [defineProperty](#defineproperty)
+    - [What are property Descriptors??](#what-are-property-descriptors)
 - [JS DS ALGO ISSUES](#js-ds-algo-issues)
 - [Function](#function)
   - [Currying](#currying)
@@ -44,6 +45,7 @@
       - [catch()](#catch)
       - [finally](#finally)
     - [Promises Static Methods](#promises-static-methods)
+    - [Interview Question of Bacancy](#interview-question-of-bacancy)
       - [allSettled](#allsettled)
       - [any](#any)
       - [all](#all)
@@ -89,11 +91,11 @@
   - [Memorization](#memorization-1)
 
 
+## JS OOPS
+### Objects
 
-## Objects
-
-### structuredClone
-### getters
+#### structuredClone
+#### getters
 Like in vue js we had **computation** property in this we have getters in case while getting avalue or a peroperty of an object we need to computate something we use the **getters** for it ;
 
 ```js
@@ -116,7 +118,7 @@ const rect = {
 console.log(rect.area) // 10000 (will run the function but you can use it as a property)
 ```
 
-### setters
+#### setters
 The setters property are **not enumerable** so you wont get the via Objec keys .
 **The Getter And Setter can be removed via delete keyword**
 
@@ -134,23 +136,23 @@ const user = {
  //user.lastName = Bakshi it will be set via that funcation
 ```
 
-### (getters and setters ) vs Proxy
+#### (getters and setters ) vs Proxy
 
-### enumerable 
+#### enumerable 
 
 The enumerables in js means those properties on js Object that can be viewed and that be looped like via **for of** loop or what you are returned via **Object.keys**
 
-### Protype Changing
+#### Protype Changing
 
 
-### Shadow properties
+#### Shadow properties
 
-### The ways tp set Portotype
+#### The ways tp set Portotype
 There are 2 kinds of way to do this: 
 - Object.create
 - Object.assign
 
-#### Object Create
+###### Object Create
 The Object.create can be used to create a protype propert on an Object
 ```js
 const parentObj = {
@@ -184,17 +186,17 @@ Rect.prototype = Object.create(Shape.prototype ,{
 })
 ```
 
-### Important Methods
+#### Important Methods
 
-#### hasOwn()
+###### hasOwn()
 It returns the **boolean value** whether the given object and **propertyName** string (key) and telling whether its inherited or its own property
 
 
-#### assign 
+###### assign 
 
 -It only works on the enumerable property or those property that can be assigned or Reset. Basically all the property that are not inherited and existed to an object .
 
-#### getPrototypeOf()
+###### getPrototypeOf()
 The getPrototypeOf is a method in which will the parent or immediate prototype of the given object. You can find all the parent 
 
 ```js
@@ -208,7 +210,7 @@ do {
 
 //Object protype is null so it will end
 ```
-#### setPrototypeOf()
+###### setPrototypeOf()
 ![SetProtype of](setPrototype.png "SetProtype of")
 The setPrototypeOf takes **childObject** **parentObj** or prototype  take it as parameter and then mutatate the childObj directly by setting up its prototype to a parentObj **and mutatate directly** and the prototype is marked as refrence so if the protype method or property is set the original parent obj also change
 
@@ -243,22 +245,22 @@ null
 inc.__proto__.methods 
 ```
 
-#### assign vs Create 
+###### assign vs Create 
 The assign is to assign the property to new object and were as in the create a protype on object
 
 
 
-#### is
+###### is
 It is used to compare two value wether two value is same mind it cqan help you to detect wether the object is of same refernce not having same value 
 ![Link]("Link" https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/is) 
 
-#### isExtensible
+###### isExtensible
 
 
-#### isFrozen
+###### isFrozen
 
 
-#### isPrototypeof 
+###### isPrototypeof 
 Its **not a static method but a prototype** it helps us to check the protype of the object like for Example
 
 ```js
@@ -274,16 +276,16 @@ console.log(Boo.prototype.isPrototypeOf(bar))
 
 ```
 
-#### isSealed
+###### isSealed
 
 
-#### isSealed vs isFrozen
+###### isSealed vs isFrozen
 
 
-#### keys
+###### keys
 The Object.keys() helps us to get array of keys String of an object passed in arguments
 
-#### entries
+###### entries
 The entries static method returns the enumerable properties **keys and value subArray**
 
 ```js
@@ -292,16 +294,16 @@ Object.entries({key:'value'})
     [key , value ]
 ]
 ```
-#### value
+###### value
 The Object.value() returns the values array of the object
 
-#### keys vs entries
+###### keys vs entries
 The **keys vs entries** method takes same type and value of argument and key return just array of key (string) and in the case of entries you can get sub-array of key and value
 
-#### preventExtension
+###### preventExtension
 The preventExtension method takes object as an argument and makes unextensionable i.e you will not be able to add  new property
 
-#### freeze
+###### freeze
 The freeze niether let you add new property or update , delete protery or change the property descruptor and it works different with strict  mode
 
 ```js
@@ -316,19 +318,19 @@ obj.__proto__ = { x: 20 };
 
 ```
 
-#### seal
+###### seal
 It just lets you modify existing value 
 
-#### seal vs freeze vs preventExtension
+###### seal vs freeze vs preventExtension
 ![Difference](difference_seal_vs_freeze_vs_prototype.png "Difference")
 
 
 
-#### defineProperty
+###### defineProperty
 Helps to define propert with descriptors
 **enumerable; configurable; writable; value**
 
-### What are property Descriptors??
+#### What are property Descriptors??
 The propert descriptors are the property typeof object like is it a **getter , setter ;  enumerable ; configurable ; writable ; value**
 
 
@@ -377,6 +379,9 @@ Its for the error handling
 
 #### Promises Static Methods
 ![Promises Static Method](images/promise_static.jpg "Promises Static Method")
+
+#### Interview Question of Bacancy
+What if something happens in allStelled or any or anyother method when the single one is rejected and you wnat to start again ????
 ##### allSettled
 If **all resolved and all rejected**
 ##### any
