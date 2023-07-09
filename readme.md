@@ -13,7 +13,7 @@
     - [assign](#assign)
     - [getPrototypeOf()](#getprototypeof)
     - [setPrototypeOf()](#setprototypeof)
-  - [assign vs Create](#assign-vs-create)
+    - [assign vs Create](#assign-vs-create)
     - [is](#is)
     - [isExtensible](#isextensible)
     - [isFrozen](#isfrozen)
@@ -37,9 +37,11 @@
     - [Using closures for  private property](#using-closures-for--private-property)
 - [Aync Activities](#aync-activities)
   - [Promises](#promises)
+    - [States](#states)
+      - [Settled](#settled)
     - [Promise constuctor Methods](#promise-constuctor-methods)
-      - [then](#then)
-      - [catch](#catch)
+      - [then()](#then)
+      - [catch()](#catch)
       - [finally](#finally)
     - [Promises Static Methods](#promises-static-methods)
       - [allSettled](#allsettled)
@@ -54,6 +56,7 @@
   - [setTimeout](#settimeout)
   - [clearInterval](#clearinterval)
   - [setInterval](#setinterval)
+  - [setImmediate](#setimmediate)
   - [clearInterval](#clearinterval-1)
 - [Advance Topics](#advance-topics)
   - [Memorization](#memorization)
@@ -84,6 +87,7 @@
   - [Design Patterns](#design-patterns)
     - [SOLID princple](#solid-princple)
   - [Memorization](#memorization-1)
+
 
 
 ## Objects
@@ -239,7 +243,7 @@ null
 inc.__proto__.methods 
 ```
 
-### assign vs Create 
+#### assign vs Create 
 The assign is to assign the property to new object and were as in the create a protype on object
 
 
@@ -349,12 +353,15 @@ The propert descriptors are the property typeof object like is it a **getter , s
 - Setlled
 - Pending
 - Rejected 
-Even if a promises is fuffiled and then also you called the **then method** it will stil be executed and they will be called after the **call stack** is cleared and then they will be executed 
+Even if a promises is fuffiled and then also you called the **then method** it will stil be executed and they will be called after the **call stack** is cleared and then they will be executed
+##### Settled
+The Settled state refers to the state when the Promise is either fullfilled or rejected , that means **the promise is said to be settled if either its accepted or rejected**
 
 #### Promise constuctor Methods
 ##### then()
 It takes 2 args the first one is the cb when the the promise is successfuly resolve and the other one is to used one their are some issue and for the **reject or catch phase**,
-A promise paryicaipate more than one nesting  or for multiple then 
+A promise paryicaipate more than one nesting  or for multiple then .4
+**Even if the Promise is resolved and it has executed its success method even after that if you invoked the then() method it will still execite its callback in the next call stack cycle**
 
 ```js
 const somePromise = new Promise(someFunc)
@@ -363,7 +370,8 @@ somePromise.then(onResolve , onReject)
 // both could be inviokled 
 ```
 
-##### catch 
+##### catch()
+Its for the error handling
 
 ##### finally 
 
@@ -394,6 +402,7 @@ If **any done all rejected**
 ### setTimeout
 ### clearInterval
 ### setInterval
+### setImmediate
 ### clearInterval
 ---
 ## Advance Topics
