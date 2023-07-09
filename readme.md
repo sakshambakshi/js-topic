@@ -121,7 +121,7 @@ The globalThis is use to refer the global object of a given environment
 
 #### Bind
 ##### Partial Application
-The partial application is  used to prefill the arguments , or to say the partial application returns 
+The partial application is  used to prefill the arguments , or to say the **partial application returns a function that requires less args**.
 
 ##### Use Cases  of Bind Like Partial Application 
 
