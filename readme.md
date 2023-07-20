@@ -715,6 +715,9 @@ CLASS VS INTERFRENCE
 
 ### Memorization 
 
+#### topics
+Box model; flex ; grid ; difference between position; semantic elem
+WHy doctype is used in html
 
 [
     "Debouncing & Throttling | Interview Prep | Browser Module | Web Dev In Hindi",
