@@ -103,6 +103,7 @@
   - [Design Patterns](#design-patterns)
     - [SOLID princple](#solid-princple)
   - [Memorization](#memorization-1)
+    - [topics](#topics)
 
 
 ## JS OOPS
@@ -110,9 +111,78 @@
 The globalThis is use to refer the global object of a given environment
 
 ### new keyword
+So what does new Operator do , it does magic lets do the manual work and then see the **magic**
+So basically just imagine a **forest game in js** and you working on the **Animal**
+```js
+const Animal = {
+    name:"Lion",
+    age:10,
+    walk(){
+        console.log(this.name)
+    },
+    getDetail(){
+        console.log(this.name , this.age)
+    }
+}
 
+```
+No if you want to create multiple Animal then it would be difficult and not optimize there will lot of copy /paste. you can do 
+
+```js
+const AnimalsMethod = {
+    walk(){
+        console.log(this.name)
+    },
+    getDetail(){
+        console.log(this.name , this.age)
+    }
+}
+Animal.prototype.walk = AnimalsMethod.walk;
+Animal.prototype.getDetail =  AnimalsMethod.getDetail;
+function Animal(name , age){
+    const AnimalObj = Object.create(Animal.prototype);
+    AnimalObj.name = name
+    AnimalObj.age = age;
+    
+    return AnimalObj;
+}
+
+```
+The above function is called it.
+Your code is good shareable but lot of work and unneccessarly  boiler part needs to be writter.
+The sae 
+```js
+function Animal(name , age){
+    this.name = name
+    this.age = age
+    this.walk = function (){
+        console.log(this.name)
+    }
+    this.getDetail = function (){
+        console.log(this.name , this.age)
+    }
+    // return this 
+}
+const Lion = new Animal("Lion" , 5)
+```
+
+So what **new** operator  is create a this and bind to contructor and returns it what it does in pratical
+```js
+function Animal(){
+    const this = Object.create(Animal.prototype);
+    return this;
+}
+```
+
+And to do better you can do the same this with **class** keyword
+
+```js
+ 
+ 
+```
 
 ### this
+![This diff](./images/this-diff.png)
 ### this in Strict vs this in non strict mode
 
 ### Inplicit binding
