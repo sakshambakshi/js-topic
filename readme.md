@@ -1,8 +1,109 @@
-
-## Execution Context
-
-### What are phase in execution phase
-### Global Execution Context
+- [JS OOPS](#js-oops)
+  - [globalThis](#globalthis)
+  - [new keyword](#new-keyword)
+  - [this](#this)
+  - [this in Strict vs this in non strict mode](#this-in-strict-vs-this-in-non-strict-mode)
+  - [Inplicit binding](#inplicit-binding)
+  - [Explict Binding](#explict-binding)
+  - [Important Methods](#important-methods)
+    - [Call](#call)
+    - [Apply](#apply)
+    - [Bind](#bind)
+      - [Bind Polyfill](#bind-polyfill)
+      - [Partial Application](#partial-application)
+      - [Use Cases  of Bind Like Partial Application](#use-cases--of-bind-like-partial-application)
+        - [Most useful example of Partial Application of Bind](#most-useful-example-of-partial-application-of-bind)
+  - [Objects](#objects)
+    - [structuredClone](#structuredclone)
+    - [getters](#getters)
+    - [setters](#setters)
+    - [(getters and setters ) vs Proxy](#getters-and-setters--vs-proxy)
+    - [enumerable](#enumerable)
+    - [Protype Changing](#protype-changing)
+    - [Shadow properties](#shadow-properties)
+    - [The ways tp set Portotype](#the-ways-tp-set-portotype)
+        - [Object Create](#object-create)
+    - [Important Methods](#important-methods-1)
+        - [hasOwn()](#hasown)
+        - [assign](#assign)
+        - [getPrototypeOf()](#getprototypeof)
+        - [setPrototypeOf()](#setprototypeof)
+        - [assign vs Create](#assign-vs-create)
+        - [is](#is)
+        - [isExtensible](#isextensible)
+        - [isFrozen](#isfrozen)
+        - [isPrototypeof](#isprototypeof)
+        - [isSealed](#issealed)
+        - [isSealed vs isFrozen](#issealed-vs-isfrozen)
+        - [keys](#keys)
+        - [entries](#entries)
+        - [value](#value)
+        - [keys vs entries](#keys-vs-entries)
+        - [preventExtension](#preventextension)
+        - [freeze](#freeze)
+        - [seal](#seal)
+        - [seal vs freeze vs preventExtension](#seal-vs-freeze-vs-preventextension)
+        - [defineProperty](#defineproperty)
+    - [What are property Descriptors??](#what-are-property-descriptors)
+- [JS DS ALGO ISSUES](#js-ds-algo-issues)
+- [Function](#function)
+  - [Currying](#currying)
+  - [Closures](#closures)
+    - [Using closures for  private property](#using-closures-for--private-property)
+- [Aync Activities](#aync-activities)
+  - [Promises](#promises)
+    - [States](#states)
+      - [Settled](#settled)
+    - [Promise constuctor Methods](#promise-constuctor-methods)
+      - [then()](#then)
+      - [catch()](#catch)
+      - [finally](#finally)
+    - [Promises Static Methods](#promises-static-methods)
+    - [Interview Question of Bacancy](#interview-question-of-bacancy)
+      - [allSettled](#allsettled)
+      - [any](#any)
+      - [all](#all)
+      - [race](#race)
+      - [reject](#reject)
+      - [resolve](#resolve)
+  - [async/await](#asyncawait)
+  - [Promises vs async/await](#promises-vs-asyncawait)
+- [Timers](#timers)
+  - [setTimeout](#settimeout)
+  - [clearInterval](#clearinterval)
+  - [setInterval](#setinterval)
+  - [setImmediate](#setimmediate)
+  - [clearInterval](#clearinterval-1)
+- [Advance Topics](#advance-topics)
+  - [Memorization](#memorization)
+  - [Debouncing and throttling](#debouncing-and-throttling)
+    - [Debouncing](#debouncing)
+    - [Throttling](#throttling)
+- [Script Loading](#script-loading)
+  - [Defer](#defer)
+  - [Async](#async)
+  - [AbortController](#abortcontroller)
+    - [Network Call AbortController](#network-call-abortcontroller)
+    - [Event Handler Abort Controller](#event-handler-abort-controller)
+    - [Custome Use Case](#custome-use-case)
+- [It can be use for exiting heavy process](#it-can-be-use-for-exiting-heavy-process)
+  - [generator in js](#generator-in-js)
+  - [MutationObserver](#mutationobserver)
+  - [Service Worker](#service-worker)
+  - [IndexDB](#indexdb)
+- [EVENTS Concept of JS](#events-concept-of-js)
+  - [Bubbling vs Capturing](#bubbling-vs-capturing)
+    - [Capturing](#capturing)
+    - [Bubbling](#bubbling)
+      - [stopPropogation()](#stoppropogation)
+  - [Event Delgation](#event-delgation)
+    - [currentTarget vs target](#currenttarget-vs-target)
+  - [Load vs DOMContentLoaded](#load-vs-domcontentloaded)
+  - [Basic OOPS](#basic-oops)
+  - [Design Patterns](#design-patterns)
+    - [SOLID princple](#solid-princple)
+  - [Memorization](#memorization-1)
+    - [topics](#topics)
 
 
 ## JS OOPS
@@ -10,9 +111,78 @@
 The globalThis is use to refer the global object of a given environment
 
 ### new keyword
+So what does new Operator do , it does magic lets do the manual work and then see the **magic**
+So basically just imagine a **forest game in js** and you working on the **Animal**
+```js
+const Animal = {
+    name:"Lion",
+    age:10,
+    walk(){
+        console.log(this.name)
+    },
+    getDetail(){
+        console.log(this.name , this.age)
+    }
+}
 
+```
+No if you want to create multiple Animal then it would be difficult and not optimize there will lot of copy /paste. you can do 
+
+```js
+const AnimalsMethod = {
+    walk(){
+        console.log(this.name)
+    },
+    getDetail(){
+        console.log(this.name , this.age)
+    }
+}
+Animal.prototype.walk = AnimalsMethod.walk;
+Animal.prototype.getDetail =  AnimalsMethod.getDetail;
+function Animal(name , age){
+    const AnimalObj = Object.create(Animal.prototype);
+    AnimalObj.name = name
+    AnimalObj.age = age;
+    
+    return AnimalObj;
+}
+
+```
+The above function is called it.
+Your code is good shareable but lot of work and unneccessarly  boiler part needs to be writter.
+The sae 
+```js
+function Animal(name , age){
+    this.name = name
+    this.age = age
+    this.walk = function (){
+        console.log(this.name)
+    }
+    this.getDetail = function (){
+        console.log(this.name , this.age)
+    }
+    // return this 
+}
+const Lion = new Animal("Lion" , 5)
+```
+
+So what **new** operator  is create a this and bind to contructor and returns it what it does in pratical
+```js
+function Animal(){
+    const this = Object.create(Animal.prototype);
+    return this;
+}
+```
+
+And to do better you can do the same this with **class** keyword
+
+```js
+ 
+ 
+```
 
 ### this
+![This diff](./images/this-diff.png)
 ### this in Strict vs this in non strict mode
 
 ### Inplicit binding
